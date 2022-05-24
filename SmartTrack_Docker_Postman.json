@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "b7080ce1-62a7-4260-9277-0bf2c4f65404",
+		"name": "SmartTrack_Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9325251"
+	},
+	"item": [
+		{
+			"name": "Imagens",
+			"item": [
+				{
+					"name": "Create Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nginx\",\r\n    \"tag\":\"latest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Images",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imagens - List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Images",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Images/dd21862d2f4960a35cd0855de5c8d4b4f4c20af133408ee008b3697cdfc2fd8b",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Images",
+								"dd21862d2f4960a35cd0855de5c8d4b4f4c20af133408ee008b3697cdfc2fd8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Image by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Images/de2543b9436b7b0e2f15919c0ad4eab06e421cecc730c9c20660c430d4e5bc47",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Images",
+								"de2543b9436b7b0e2f15919c0ad4eab06e421cecc730c9c20660c430d4e5bc47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All images",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Images",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Containers",
+			"item": [
+				{
+					"name": "Execute Container",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"nginx\",\r\n    \"name\": \"nginxTest\",\r\n    \"port\": \"8081:80\",\r\n    \"env\":{\r\n        \"IXI\": \"OXI\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Containers",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Containers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Container by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Containers/db69d3ba3c0706ef38c31f1498f22f4f620178694328bfcf76554b1bda597e32",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Containers",
+								"db69d3ba3c0706ef38c31f1498f22f4f620178694328bfcf76554b1bda597e32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Containers - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Containers",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Containers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Container by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Containers/0face799f91d8257894ab94766951025dfc2870394a50406736570403478035e",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Containers",
+								"0face799f91d8257894ab94766951025dfc2870394a50406736570403478035e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Containers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ST}}:{{ST_Port}}/Containers",
+							"protocol": "http",
+							"host": [
+								"{{ST}}"
+							],
+							"port": "{{ST_Port}}",
+							"path": [
+								"Containers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
